@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día de Muertos | Tradición Mexicana</title>
+
+<style>
+:root {
+  --orange: #f28c28;
+  --yellow: #ffc857;
+  --dark: #171019;
+  --purple: #57265f;
+  --cream: #fff3df;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: var(--dark);
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+nav {
+  background: #211525;
+  padding: 16px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid var(--orange);
+}
+
+nav h2 {
+  color: var(--yellow);
+  font-size: 21px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--yellow);
+}
+
+.hero {
+  min-height: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  background:
+    linear-gradient(rgba(20,10,25,.55),rgba(20,10,25,.88)),
+    url("https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=1600")
+    center/cover;
+}
+
+.hero h1 {
+  color: var(--yellow);
+  font-size: clamp(42px, 8vw, 85px);
+  line-height: 1.1;
+  text-shadow: 3px 3px 10px black;
+}
+
+.hero p {
+  max-width: 650px;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.btn {
+  background: var(--orange);
+  color: #211525;
+  padding: 13px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: var(--yellow);
+  transform: translateY(-2px);
+}
+
+section {
+  padding: 75px 8%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 35px;
+  color: var(--yellow);
+  margin-bottom: 20px;
+}
+
+.intro {
+  max-width: 850px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.purple {
+  background: #291c35;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.card {
+  background: #302137;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #754b69;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: var(--orange);
+}
+
+.card .emoji {
+  font-size: 43px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.timeline {
+  max-width: 750px;
+  margin: 35px auto;
+  text-align: left;
+}
+
+.timeline article {
+  padding: 20px;
+  margin: 15px 0;
+  border-left: 4px solid var(--orange);
+  background: #302137;
+  border-radius: 0 12px 12px 0;
+}
+
+.timeline h3 {
+  color: var(--yellow);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #754b69;
+}
+
+.quiz {
+  background: #302137;
+  max-width: 650px;
+  margin: 30px auto 0;
+  padding: 30px;
+  border-radius: 18px;
+}
+
+.quiz button {
+  margin: 8px;
+}
+
+#resultado {
+  color: var(--yellow);
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+footer {
+  background: #110d15;
+  padding: 30px;
+  text-align: center;
+  border-top: 2px solid var(--orange);
+  color: #d6c5d6;
+}
+
+@media(max-width:700px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>🌼 Día de Muertos</h2>
+  <div>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Historia</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#tradiciones">Tradiciones</a>
+    <a href="#quiz">Quiz</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <h1>DÍA DE<br>MUERTOS</h1>
+  <p>
+    Una tradición mexicana donde recordamos con amor
+    a quienes ya no están físicamente con nosotros.
+  </p>
+  <a href="#historia" class="btn">Descubrir la tradición</a>
+</header>
+
+<section id="historia">
+  <h2>¿Qué es el Día de Muertos?</h2>
+  <p class="intro">
+    El Día de Muertos es una de las tradiciones más representativas
+    de México. Es una celebración en la que las familias recuerdan
+    y honran a sus seres queridos fallecidos mediante ofrendas,
+    fotografías, flores, alimentos y otros elementos simbólicos.
+    Se celebra principalmente los días 1 y 2 de noviembre.
+  </p>
+</section>
+
+<section class="purple">
+  <h2>Origen e historia</h2>
+  <p class="intro">
+    Esta celebración tiene raíces en las culturas indígenas
+    de México, que tenían distintas ceremonias para honrar
+    a sus difuntos. Con la llegada de los españoles, estas
+    costumbres se mezclaron con las celebraciones católicas
+    de Todos los Santos y los Fieles Difuntos.
+    Con el paso del tiempo nació una tradición única que
+    representa la memoria, la identidad y la cultura mexicana.
+  </p>
+  <div class="timeline">
+    <article>
+      <h3>Época prehispánica</h3>
+      <p>Los pueblos originarios realizaban ceremonias para honrar a los muertos.</p>
+    </article>
+    <article>
+      <h3>Época colonial</h3>
+      <p>Las tradiciones indígenas se mezclaron con las celebraciones religiosas europeas.</p>
+    </article>
+    <article>
+      <h3>Actualidad</h3>
+      <p>Las familias mexicanas mantienen viva esta tradición mediante altares, flores y reuniones.</p>
+    </article>
+  </div>
+</section>
+
+<section id="elementos">
+  <h2>Elementos de la ofrenda</h2>
+  <p class="intro">
+    Cada objeto colocado en el altar tiene un significado
+    especial. Estos son algunos de los elementos más importantes:
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="emoji">🕯️</span>
+      <h3>Veladoras</h3>
+      <p>Representan la luz que guía a las almas en su camino de regreso.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🌼</span>
+      <h3>Flor de cempasúchil</h3>
+      <p>Su color y aroma ayudan simbólicamente a orientar a los difuntos hacia la ofrenda.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">💀</span>
+      <h3>Calaveritas</h3>
+      <p>Representan la muerte de una manera colorida y festiva.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🍞</span>
+      <h3>Pan de muerto</h3>
+      <p>Es un alimento tradicional que se comparte y se coloca en el altar.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">💧</span>
+      <h3>Agua</h3>
+      <p>Se ofrece para calmar la sed de las almas después de su recorrido.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧂</span>
+      <h3>Sal</h3>
+      <p>Simboliza la purificación y protección del alma.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🎊</span>
+      <h3>Papel picado</h3>
+      <p>Representa el viento y la alegría de la celebración.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🖼️</span>
+      <h3>Fotografías</h3>
+      <p>Recuerdan a las personas fallecidas a quienes está dedicada la ofrenda.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🍲</span>
+      <h3>Comida favorita</h3>
+      <p>Se colocan los platillos que disfrutaban los seres queridos.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🔥</span>
+      <h3>Copal e incienso</h3>
+      <p>El humo representa la purificación y tiene un sentido espiritual.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🐕</span>
+      <h3>Perro Xoloitzcuintle</h3>
+      <p>En algunas tradiciones se relaciona con la guía de las almas hacia el más allá.</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🏵️</span>
+      <h3>Arco de flores</h3>
+      <p>Simboliza el paso entre el mundo de los vivos y el de los difuntos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="purple" id="tradiciones">
+  <h2>Tradiciones mexicanas</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="emoji">🏵️</span>
+      <h3>Altares y ofrendas</h3>
+      <p>Las familias preparan altares con fotografías y objetos especiales.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">🪦</span>
+      <h3>Visita al panteón</h3>
+      <p>Se limpian y decoran las tumbas con flores y veladoras.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">🎭</span>
+      <h3>Desfiles y disfraces</h3>
+      <p>En diferentes lugares se realizan actividades culturales y desfiles.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">🍞</span>
+      <h3>Pan de muerto</h3>
+      <p>Las familias disfrutan este pan tradicional acompañado de bebidas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Galería de la tradición</h2>
+  <p class="intro">Colores, flores y recuerdos que mantienen viva nuestra cultura.</p>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1602957565946-7f5c3c5c0e8c?w=600" alt="Celebración mexicana">
+    <img src="https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=600" alt="Decoración de Día de Muertos">
+    <img src="https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21b?w=600" alt="Flores y decoración">
+  </div>
+</section>
+
+<section class="purple" id="quiz">
+  <h2>¿Cuánto aprendiste?</h2>
+  <p>Contesta esta pequeña pregunta sobre el Día de Muertos.</p>
+
+  <div class="quiz">
+    <h3>¿Qué representa la flor de cempasúchil?</h3>
+    <button class="btn" onclick="responder(false)">La tristeza</button>
+    <button class="btn" onclick="responder(true)">La guía de las almas</button>
+    <button class="btn" onclick="responder(false)">La lluvia</button>
+    <p id="resultado"></p>
+  </div>
+</section>
+
+<section>
+  <h2>Conclusión</h2>
+  <p class="intro">
+    El Día de Muertos es mucho más que una celebración:
+    es una expresión de amor, respeto y recuerdo.
+    Gracias a esta tradición, las familias mexicanas
+    mantienen presentes a sus seres queridos y transmiten
+    su cultura de generación en generación.
+    ¡Debemos sentir orgullo de nuestras raíces mexicanas!
+  </p>
+  <br>
+  <a href="#inicio" class="btn">Volver al inicio ↑</a>
+</section>
+
+<footer>
+  <p>🌼 DÍA DE MUERTOS 🌼</p>
+  <p>Proyecto escolar | Cultura y tradiciones de México</p>
+  <p>Hecho con orgullo mexicano 🇲🇽</p>
+</footer>
+
+<script>
+function responder(correcto) {
+  const resultado = document.getElementById("resultado");
+
+  if (correcto) {
+    resultado.textContent = "¡Excelente! 🎉 Respuesta correcta.";
+  } else {
+    resultado.textContent = "Inténtalo otra vez. ¡Tú puedes! 🌼";
+  }
+}
+</script>
+
+</body>
+</html>
